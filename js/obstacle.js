@@ -3,6 +3,7 @@ class Obstacle {
         this.size = 50
         this.x = width
         this.y = height - this.size
+        this.hited = false
     }
     /*  **Constructor**  --> 
     Aqui estamos definindo onde ele será criado e qual tamanho vai ter

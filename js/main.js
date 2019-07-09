@@ -22,4 +22,6 @@ function draw() {
     }
 
     game.showScore()
+
+    game.gameOver()
 }

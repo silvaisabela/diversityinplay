@@ -27,10 +27,11 @@ class Game {
         this.obstacles.forEach((obstacle, index) => {
             obstacle.move()
             obstacle.show()
-            if (this.avatar.hits(obstacle)) {
-                noLoop()
+            if (this.avatar.hits(obstacle) && !obstacle.hited) {
+                obstacle.hited = true
+                this.avatar.lostLife()
             }
-            if (obstacle.isHide()) {
+            if (obstacle.isHide() && !obstacle.hited) {
                 this.score = this.score + 10
             }
             if (obstacle.isHide() && this.obstacles.length > 1) {
@@ -56,5 +57,11 @@ class Game {
 
     levelArrived() {
         return this.levelGoal[this.level] === this.score
+    }
+
+    gameOver(){
+        if(this.avatar.isDead()){
+            noLoop()
+        }
     }
 }
