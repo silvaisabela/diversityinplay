@@ -12,10 +12,10 @@ class Obstacle {
 
     move(velocity) {
         if (velocity == null)
-        velocity = 5
+            velocity = 5
         this.x = this.x - velocity
         // this.x -= velocity
-     }
+    }
 
     /* A **Move** -->
  - if (velocity == null) = ele verifica se a velocidade  não existe, se não existir o valor da velocidade é = 5 (igual a cinco) que está definido em velocity = 5 s
@@ -27,4 +27,9 @@ class Obstacle {
     }
     /* O Show** -->
  - rect : cria o quadrado e apresenta ele na tela */
+
+    isHide() {
+        return this.x == 0
+    }
+
 }
