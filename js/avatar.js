@@ -5,6 +5,8 @@ class Avatar {
         this.y = height - this.size
         this.forceY = 0
         this.gravity = 1
+        this.life = 3
+
     }
     /* Constructor --->
       Aqui estamos definindo onde ele será criado e qual tamanho vai ter
@@ -18,12 +20,12 @@ class Avatar {
     isInitialPosition() {
         return this.y == height - this.size
     }
+
     jump() {
         if (this.isInitialPosition()) {
             this.forceY = -20
         }
     }
-
     /* Jump** -->
     Se o avatar estiver na posição inicial ele pula se não ele não faz nada */
 
@@ -32,7 +34,7 @@ class Avatar {
     }
 
 
-    /* Essa função está verificando se o avatar bateu no obstaculo.*/ 
+    /* Essa função está verificando se o avatar bateu no obstaculo.*/
 
     move() {
         this.y += this.forceY
@@ -48,7 +50,19 @@ class Avatar {
 
     show() {
         rect(this.x, this.y, this.size, this.size)
+        textSize(15)
+        text(`Life: ${this.life}`, 10, 20)
     }
     /* O Show** -->
  - rect : cria o quadrado e apresenta ele na tela */
+
+    lostLife() {
+        if (this.life > 0) {
+            this.life = this.life - 1
+        }
+    }
+
+    isDead(){
+        return this.life === 0 
+    }
 }
