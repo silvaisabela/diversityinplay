@@ -16,6 +16,7 @@ class Game {
      * Mostra na tela uma string level e score
      */
     showScore() {
+        // textFont('ColorTube')
         textSize(15)
         text(`Level: ${this.level} Score: ${this.score}`, width - 150, 20)
     }
@@ -106,4 +107,12 @@ class Game {
             noLoop()
         }
     }
+
 }
+
+
+// let fontRegular
+// function preload() {
+//     fontRegular =  ('./assets/ColorTube.otf')
+    
+// }
