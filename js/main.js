@@ -1,5 +1,6 @@
 let game
 
+
 function setup() {
     createCanvas(600, 450)
     game = new Game()
