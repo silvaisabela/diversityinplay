@@ -2,7 +2,7 @@ let game
 
 
 function setup() {
-    createCanvas(600, 450)
+    createCanvas(1000, 500)
     game = new Game()
 }
 
@@ -10,19 +10,18 @@ function keyPressed() {
     if (key == ' ') {
         game.avatar.jump()
     }
+    if (keyCode == ENTER) {
+        game.restart()
+    }
 }
 
+
 function draw() {
-    background(220)
+    playBackground()
     game.showObstacles()
-
     game.showAvatar()
-
-    if (game.levelArrived()) {
-        game.nextLevel()
-    }
-
     game.showScore()
-
-    game.gameOver()
+    if (game.gameOver()) {
+        game.showGameOver()
+    }
 }
