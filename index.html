@@ -2,23 +2,49 @@
 <html lang="pt-br">
 
 <head>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.dom.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.sound.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/bmoren/p5.collide2D/p5.collide2d.min.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Diversidade em Jogo</title>
-    <link rel="shortcut icon" href="./img/multiculturalism.png" type="logo imagem arco iris">
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./index.css">
 </head>
 
-<body>  
-    <script src="./js/avatar.js"></script>
-    <script src="./js/obstacle.js"></script>
-    <script src="./js/game.js"></script> 
-    <script src="./js/main.js"></script>  
+<body>
+    <div class="container">
+
+        <section class="conteudoHome contentHide container" id="homeShow">
+            <div>
+                <div class="logoHome">
+                    <img src="./img/diversidade-em-jogo.png" alt="Logotipo diversidade em jogo">
+                </div>
+
+                <div class="descricaoHome">
+                    <p>Diversidade em jogo é um web game, e seu objetivo é vencer os obstáculos impostos pela sociedade
+                        se
+                        colocando no lugar do próximo.</p>
+                </div>
+                <div>
+                    <img src="" alt="">
+                </div>
+            </div>
+
+            <a href="./pages/avatar.html" class="cta">
+                <img class="iniciarImg " src="./img/botao-iniciar.png" alt="Botão Iniciar">
+                <svg class="svg-icon" viewBox="0 0 20 20">
+                    <path fill="none"
+                        d="M11.611,10.049l-4.76-4.873c-0.303-0.31-0.297-0.804,0.012-1.105c0.309-0.304,0.803-0.293,1.105,0.012l5.306,5.433c0.304,0.31,0.296,0.805-0.012,1.105L7.83,15.928c-0.152,0.148-0.35,0.223-0.547,0.223c-0.203,0-0.406-0.08-0.559-0.236c-0.303-0.309-0.295-0.803,0.012-1.104L11.611,10.049z">
+                    </path>
+                </svg>
+            </a>
+
+
+        </section>
+        <div class="logoAbertura" onmouseover="logoFechamento(this)">
+            <img src="./img/diversidade-em-jogo.png" id="homeImg" alt="Logotipo diversidade em jogo">
+        </div>
+    </div>
+
+    <script src="./index.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,192 @@
+@font-face {
+    font-family: "Fivo Sans";
+    src: url("./assets/font/FivoSans-Regular.otf") format("embedded-opentype");
+}
+
+* {
+    margin: 0 auto;
+}
+
+.container {
+    width: 90%;
+}
+
+.logoAvatar {
+    width: 250px;
+    margin-top: 20px;
+}
+
+.sectionAvatar {
+    width: 80%;
+}
+
+.divAvatar {
+    background-image: url(../img/back-como-jogar.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 80%;
+    min-height: 80%;
+    position: absolute;
+}
+
+.contentAvatar {
+    background-color: #ffffff;
+    width: 90.8%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    top: 50px;
+    padding-top: 20px;
+    min-height: 395px;
+}
+
+.contentAvatar>img {
+    width: 300px;
+    margin: 0px 0px 30px 0px;
+}
+
+.enter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.enter >img{
+    width: 50px;
+}
+
+.enter > p{
+    font-family: "fivo Sans";
+    width: 250px;
+    text-align: center;
+}
+
+.contentAvatar>p {
+    font-family: "Fivo Sans";
+    font-size: 18px;
+    width: 500px;
+    text-align: center;
+    margin: 30px;
+    display: flex;
+    align-items: center;
+}
+
+.contentIntro{
+    display: flex;
+    width: 80%;
+}
+
+.barraEspaco{
+    width: 200px;
+    font-family: "Fivo Sans";
+    text-align: center;
+    padding: 10px;
+}
+
+.barraEspaco> img{
+    padding: 15px 0px 0px 0px;
+width: 200px;
+}
+
+.vida{
+    display: flex;
+    flex-direction: column;
+ 
+}
+.vida>P{
+font-family: "Fivo Sans";
+font-size: 18px;
+text-align: center;
+width: 300px;
+}
+.vidaCoracao >img{
+width: 50PX;
+}
+
+
+
+.botaoEscolher{
+border-radius: 50px;
+padding: 10px 30px;
+background-color: rgba(249, 199, 193);
+border: rgba(0, 0, 0, 0.4) 1px solid;
+margin-top: 20px;
+
+}
+
+.botaoEscolher > img{
+    width: 80px;
+}
+
+
+.botaoEscolher  {
+    top: 0;
+    left: 0;
+    transition: all .15s linear 0s;
+    position: relative;
+    display: inline-block;
+    /* padding: 15px 25px; */
+    background-color: rgba(249, 199, 193);;
+    box-shadow: 6px 6px 0 rgb(232, 147, 137);
+  }
+  .botaoEscolher :hover {
+    top: 3px;
+    left: -3px;
+  }
+  .botaoEscolher :hover::after {
+    top: 1px;
+    left: -2px;
+    width: 4px;
+    height: 4px;
+  }
+  .botaoEscolher :hover::before {
+    bottom: -2px;
+    right: 1px;
+    width: 4px;
+    height: 4px;
+  }
+  .botaoEscolher ::after {
+    transition: all .15s linear 0s;
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: -4px;
+    width: 8px;
+    height: 8px;
+    background-color: #404040;
+    transform: rotate(45deg);
+    z-index: -1;
+  }
+  .botaoEscolher ::before {
+    transition: all .15s linear 0s;
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    right: 2px;
+    width: 8px;
+    height: 8px;
+    background-color: rgb(206, 142, 229);
+    transform: rotate(45deg);
+    z-index: -1;
+  }
+  
+  a.botaoEscolher  {
+    position: relative;
+  }
+  
+  a:active.botaoEscolher  {
+    top: 6px;
+    left: -6px;
+    box-shadow: none;
+  }
+  a:active.botaoEscolher :before {
+    bottom: 1px;
+    right: 1px;
+  }
+  a:active.botaoEscolher :after {
+    top: 1px;
+    left: 1px;
+  }
+  

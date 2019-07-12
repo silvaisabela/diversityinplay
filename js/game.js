@@ -1,24 +1,17 @@
 class Game {
     constructor() {
         this.avatar = new Avatar()
-        this.obstacles = [new Obstacle()]
-        this.level = 1
+        this.obstacles = [new Obstacle(100, 40, hole)]
         this.score = 0
-        this.levelGoal = {
-            1: 50,
-            2: 60,
-            3: 450,
-            4: 600
-        }
     }
 
     /**
      * Mostra na tela uma string level e score
      */
     showScore() {
-        // textFont('ColorTube')
-        textSize(15)
-        text(`Level: ${this.level} Score: ${this.score}`, width - 150, 20)
+        applyTextTheme()
+        let dias = parseInt(this.score / 100    ) + 1
+        text(`Dia: ${dias} Socore: ${this.score}`, width - 320, 40)
     }
 
     /**
@@ -46,7 +39,12 @@ class Game {
     addObstacle() {
         if (random(1) < 0.05 && this.obstacles.length) {
             if (this.obstacles[this.obstacles.length - 1].x < width - width / 3) {
-                this.obstacles.push(new Obstacle())
+                if(random(1) < 0.5){
+
+                    this.obstacles.push(new Obstacle(100, 40, hole))
+                }else{
+                    this.obstacles.push(new Obstacle(50, 100, semafaro))
+                }
             }
         }
     }
@@ -81,38 +79,26 @@ class Game {
     }
 
     /**
-     * Muda o level zerando o score e os obstaculos na tela
-     */
-    nextLevel() {
-        this.score = 0
-        this.level = this.level + 1
-        this.obstacles = []
-        setTimeout(() => {
-            this.obstacles = [new Obstacle()]
-        }, 3000)
-    }
-
-    /**
-     * Verifica se avatar atingiu o score para mudar de nivel 
-     */
-    levelArrived() {
-        return this.levelGoal[this.level] === this.score
-    }
-
-    /**
      * Para o jogo se a vida chegar a 0 
      */
     gameOver() {
-        if (this.avatar.isDead()) {
-            noLoop()
-        }
+        return this.avatar.isDead()
+    }
+
+    showGameOver() {
+        applyStopBackground()
+        applyTextTheme(40)
+        text(`Game Over`, width / 3.4, height / 2)
+        textSize(20)
+        text(`Aperte enter para reiniciar`, width / 5, height / 2 + 40)
+        noLoop()
+    }
+
+    restart() {
+        this.score = 0
+        this.avatar = new Avatar()
+        this.obstacles = [new Obstacle(100, 40, hole)]
+        loop()
     }
 
 }
-
-
-// let fontRegular
-// function preload() {
-//     fontRegular =  ('./assets/ColorTube.otf')
-    
-// }

@@ -1,0 +1,164 @@
+@font-face {
+    font-family: "Fivo Sans";
+    src: url("./assets/font/FivoSans-Regular.otf") format("embedded-opentype");
+}
+
+* {
+    margin: 0 auto;
+}
+
+.container {
+    position: relative;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+}
+
+.logoAbertura {
+    position: absolute;
+    top: 200px;
+
+
+}
+
+.logoHide {
+    animation: hide 3s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes hide {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        margin-top: 0;
+        overflow: hidden;
+    }
+}
+
+.contentShow {
+    animation: show 3s;
+    animation-fill-mode: forwards;
+}
+
+.contentHide {
+    opacity: 0;
+}
+
+@keyframes show {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+        z-index: 2;
+    }
+}
+
+.conteudoHome {
+    position: relative;
+    top: 50px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.logoAbertura>img {
+    width: 1000px;
+}
+
+.logoHome {
+    margin-top: 50px;
+}
+
+.logoHome>img {
+    width: 700px;
+}
+
+
+.descricaoHome {
+    text-align: center;
+    width: 550px;
+    margin-top: 30px;
+}
+
+.descricaoHome>p {
+    font-family: "Fivo Sans";
+    font-size: 19px;
+}
+
+.botao {
+    position: relative;
+}
+
+.iniciarImg {
+    width: 110px;
+    margin-top: 18px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.cta {
+    position: relative;
+    padding: 0px 40px 0px 15px;
+    transition: all 0.2s ease;
+    margin-top: 20px;
+}
+
+.cta:before {
+    content: "";
+    position: absolute;
+    top: 14px;
+    right: 0;
+    display: block;
+    border-radius: 28px;
+    background: rgba(233, 48, 129, 1);
+    width: 40px;
+    height: 40px;
+    transition: all 0.3s ease;
+}
+
+.cta span {
+    position: relative;
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: 900;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    vertical-align: middle;
+}
+
+.cta:hover:before {
+    width: 100%;
+    background: rgba(222, 185, 185, 0.28);
+    border: rgba(180, 99, 183) 1px solid;
+}
+
+.cta:active {
+    transform: scale(0.96);
+}
+
+
+.cta svg {
+    position: absolute;
+    top: 22px;
+    right: 8px;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke: rgb(255, 255, 255);
+    stroke-width: 2;
+    transition: all 0.3s ease;
+    width: 25px;
+}
+
+.cta:hover svg {
+    transform: translateX(0);
+    stroke: rgba(233, 48, 129, 1);
+}

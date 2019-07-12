@@ -1,0 +1,19 @@
+* {
+  margin: 0 auto;
+}
+  
+  canvas {
+    display: block;
+    margin: 20px auto; 
+    border: 3px solid rgba(249, 199, 193);
+    width: 90%;
+  }
+  
+  .container {
+    width: 90%;
+}
+
+.logoAvatar {
+    width: 250px;
+    margin-top: 20px;
+}

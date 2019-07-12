@@ -1,21 +1,12 @@
-let avatarImg1;
-let avatarImg2;
-let time = 300;
-let lastTime = 300;
-
-function preload() {
-    avatarImg1 = loadImage('img/home-1.jpg')
-    avatarImg2 = loadImage('img/home-2.jpg')
-}
-
 class Avatar {
     constructor() {
-        this.width = 80
-        this.height = 100
+        this.width = 120
+        this.height = 150
         this.x = 50
         this.y = height - this.height
         this.forceY = 0
         this.gravity = 1
+        this.hearts = [true, true, true]
         this.life = 3
         this.change = false
     }
@@ -41,7 +32,7 @@ class Avatar {
      * @param {Obstacle} obstacle É um elemento que pode ser atingindo pelo avatar
      */
     hits(obstacle) {
-        return collideRectRect(this.x, this.y, this.width, this.height, obstacle.x, obstacle.y, obstacle.size, obstacle.size)
+        return collideRectRect(this.x, this.y, this.width, this.height, obstacle.x, obstacle.y, obstacle.width, obstacle.height)
     }
 
     /**
@@ -57,17 +48,10 @@ class Avatar {
      * Mostra o avatar e a vida
      */
     show() {
-        image(this.change ? avatarImg1 : avatarImg2, this.x, this.y, this.width, this.height)
-        if (lastTime == time) {
-            setTimeout(() => {
-                time = 300
-                lastTime = 300
-                this.change = !this.change
-            }, time)
-        }
-        lastTime = 0
-        textSize(15)
-        text(`Life: ${this.life}`, 10, 20)
+        image(avatar, this.x, this.y - 15, this.width, this.height)
+        this.hearts.forEach((alive, index) => {
+            image(alive ? heartPink : heartWhite, (index + 1) * 40, 20, 30, 30)
+        });
     }
 
     /**
@@ -75,7 +59,8 @@ class Avatar {
      */
     lostLife() {
         if (this.life > 0) {
-            this.life = this.life - 1
+            this.hearts[this.life - 1] = false
+            this.life--
         }
     }
 
